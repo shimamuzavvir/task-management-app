@@ -9,7 +9,7 @@ const Home = ({ username }) => {
 
     return (
         <div>
-            <div className='container' id='box-container'>
+            <div className='container-fluid' id='box-container'>
                 <div className="card" style={{ width: "50rem" }}>
                     <div className="card-body">
                         <h1 className="card-title text-center">Hello {username}!</h1>

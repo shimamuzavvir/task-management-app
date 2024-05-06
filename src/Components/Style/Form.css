@@ -20,9 +20,9 @@
 
 /* Sign-in and sign-up forms */
 .signin-signup {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative; /* Changed to relative */
+  width: 100%; /* Set width to 100% */
+  max-width: 500px; /* Set max-width for better responsiveness */
   display: grid;
   grid-template-columns: 1fr;
   z-index: 5;
@@ -134,7 +134,11 @@
 /* Media Queries for Mobile */
 @media screen and (max-width: 768px) {
   .signin-signup {
-      width: 90%; /* Adjust width for smaller screens */
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .sign-up-mode .left-panel {
+    display: none; /* Hide left panel on smaller screens */
   }
 
   /* Add more media queries as needed */
