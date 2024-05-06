@@ -1,0 +1,139 @@
+/* Common styles */
+.form-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(197, 194, 188); /* Set the background color */
+  }
+  
+  /* Sign-in and sign-up forms container */
+  .forms-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  /* Sign-in and sign-up forms */
+  .signin-signup {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+    transition: 1s 0.7s ease-in-out;
+    background-color: #ffffff; /* Set the background color */
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  }
+  
+  /* Sign-in and sign-up form container */
+ #form {
+    background-color: #fbf6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem ; /* Adjust padding */
+    transition: all 0.2s 0.7s;
+    overflow: hidden;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  /* Sign-in form */
+  .sign-in-form {
+    opacity: 1;
+    z-index: 5;
+  }
+  
+  /* Content */
+  .content {
+    color: #000000; /* Set the font color */
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
+  }
+  
+  .content h3 {
+    font-size: 2.1rem;
+    margin: 10px;
+    color: #000000; /* Set the font color */
+    margin-bottom: 10px;
+  }
+  
+  .content p {
+    margin: 10px;
+    font-size: 1rem;
+    color: #000000; /* Set the font color */
+    margin-bottom: 20px;
+  }
+  
+  /* Buttons */
+  .btn {
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #ffffff; /* Set the font color */
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    margin: 8px 0;
+    transition: all 0.3s ease;
+  }
+   
+  
+  .transparent {
+    background-color: transparent;
+    border: 2px solid #007bff; /* Set the border color for sign-up button */
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Social media */
+  .social-media {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+  }
+  
+  .social-icon i {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  /* Animation */
+  .sign-up-mode .panels-container {
+    transform: translateY(-100%);
+  }
+  
+  .sign-up-mode .left-panel .content {
+    transform: translateY(0%);
+  }
+  
+  .sign-up-mode .image,
+  .sign-up-mode .left-panel {
+    transform: translateY(0%);
+  }
+
+  
+  
+  
+  
