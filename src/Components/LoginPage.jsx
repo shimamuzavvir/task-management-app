@@ -1,3 +1,4 @@
+// LoginPage.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
@@ -102,7 +103,6 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
             </div>
           </form>
           {/* Sign-up link */}
-          
           <div className="content">
             <h3>New here ?</h3>
             <p>Create an account to access exclusive features and content.</p>
@@ -110,7 +110,6 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
               Sign up
             </button>
           </div>
-        
         </div>
       </div>
       <ToastContainer />
