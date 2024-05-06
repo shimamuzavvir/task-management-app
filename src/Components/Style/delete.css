@@ -7,7 +7,7 @@
     background-color: #f1e1ea;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
+    width: 100%;
 }
 table {
     width: 100%;
