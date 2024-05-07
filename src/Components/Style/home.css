@@ -1,53 +1,71 @@
-/* Home Component */
-#box-container {
+.box-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 100vh;
-  background-image: linear-gradient(to right, rgb(50, 50, 150), rgb(157, 157, 58), pink, rgb(104, 5, 5)); /* Set the background color */
+  align-items: center;
+  height: 100vh;
 }
 
 .card {
-  width: 90%; /* Adjusted width for smaller screens */
-  max-width: 500px; /* Set maximum width */
-  padding: 20px;
+  width: 90%;
+  max-width: 400px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff; /* Set the background color */
-  margin-bottom: 20px; /* Added margin-bottom for spacing */
+  background-color: #fff;
+}
+
+.card-body {
+  padding: 20px;
 }
 
 .card-title {
-  font-size: 28px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
 .card-text {
-  font-size: 22px;
-  color: #555555; /* Set the text color */
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
 }
 
-.btn-container {
+
+/* Home Component CSS */
+.home-btn-container {
   display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap to a new line on smaller screens */
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
 }
 
-.btn {
+.home-btn {
   padding: 10px 20px;
-  margin: 5px; /* Adjusted margin for better spacing */
+  margin: 5px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff; /* Set the button background color */
-  color: #ffffff; /* Set the button text color */
+  color: #ffffff;
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #0056b3; /* Set the button background color on hover */
+.home-btn-primary {
+  background-color: #007bff;
 }
+
+.home-btn-success {
+  background-color: #28a745;
+}
+
+.home-btn-warning {
+  background-color: #ffc107;
+}
+
+.home-btn-danger {
+  background-color: #dc3545;
+}
+
+.home-btn:hover {
+  filter: brightness(90%); /* Adjust brightness on hover */
+}
+
+

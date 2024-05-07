@@ -45,7 +45,7 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
   };
 
   return (
-    <div className={`form-container ${signUpMode ? 'sign-up-mode' : ''}`}>
+    <div className={`container ${signUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
           <form onSubmit={formik.handleSubmit} className="sign-in-form" id='form'>
@@ -102,15 +102,20 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
               </a>
             </div>
           </form>
+          </div>
+        </div>
           {/* Sign-up link */}
+          <div className="panels-container">
+        <div className="panel left-panel">
           <div className="content">
             <h3>New here ?</h3>
             <p>Create an account to access exclusive features and content.</p>
             <button className="btn btn-primary mb-3"  id="sign-up-btn" onClick={toggleMode}>
               Sign up
             </button>
-          </div>
-        </div>
+        
+      </div>
+      </div>
       </div>
       <ToastContainer />
     </div>

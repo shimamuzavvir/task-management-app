@@ -1,48 +1,59 @@
 .task-container {
-    max-width: auto;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ddd;
-  }
-  
-  .task-container h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .table th, .table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .table th {
-    background-color: #c6e2d0;
-  }
-  
-  .table tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  .table tr:hover {
-    background-color: #ddd;
-  }
-  
-  .table td ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .table td ul li {
-    margin-bottom: 10px;
-  }
-  
-  .table td ul li p {
-    margin: 5px 0;
-  }
-  
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa; /* Background color */
+}
+
+.task-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #dee2e6; /* Table border color */
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #007bff; /* Header background color */
+  color: #fff; /* Header text color */
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Even row background color */
+}
+
+.table tr:hover {
+  background-color: #e2e6ea; /* Hover row background color */
+}
+
+.table td ul {
+  list-style: none;
+  padding: 0;
+}
+
+.table td ul li {
+  margin-bottom: 10px;
+}
+
+.table td ul li p {
+  margin: 5px 0;
+}
+
+.input-group {
+  margin: 5px; /* Margin below input group */
+}
+
+.input-group input[type="text"] {
+  width: 70%; /* Adjust input width */
+}
+
+

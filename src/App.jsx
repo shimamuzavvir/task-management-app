@@ -41,7 +41,7 @@ const App = () => {
           <Route path='/updatetask/:email/:taskId' element={<><NavBar /><UpdateTask email={email} /> </>} />
           <Route path='/deletetask/:email/:taskId' element={<><NavBar /><DeleteTask email={email} /> </>} />
           <Route path='/getusertask/:email' element={<><NavBar /><TaskDetails email={email} /> </>} />
-          <Route path='/tasks' element={<><NavBar /><AllTasks token={token} setResponseData={setResponseData} /> </>} />
+          <Route path='/tasks/:email' element={<><NavBar /><AllTasks token={token} email={email} /> </>} />
 
         </Routes>
       </BrowserRouter>

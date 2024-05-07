@@ -53,7 +53,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className={`form-container ${signUpMode ? 'sign-up-mode' : ''}`}>
+    <div className={`container ${signUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
           <form onSubmit={formik.handleSubmit} id='form'>

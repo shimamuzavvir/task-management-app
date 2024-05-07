@@ -41,7 +41,7 @@ const CreateTask = () => {
     };
 
     return (
-        <div className="container">
+        <div className="create-container">
             <h2>Create Task</h2>
             <Formik
                 initialValues={initialValues}

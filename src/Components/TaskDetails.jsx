@@ -23,12 +23,13 @@ const TaskDetails = () => {
         };
 
         fetchTasks();
-    }, [email]);
+    }, [email, searchTerm]);
 
     const handleSearch = async () => {
         try {
             const response = await axios.get(`https://task-management-app-backend-e5c6.onrender.com/api/user/search/${email}?keyword=${searchTerm}`);
             setTasks(response.data.data);
+            console.log(response.data);
         } catch (error) {
             console.error('Error searching tasks:', error);
         }
@@ -36,7 +37,7 @@ const TaskDetails = () => {
 
     return (
         
-        <div className="container">
+        <div className="task-container">
             <h2>My Tasks</h2>
             <div className="input-group mb-3">
                 <input
