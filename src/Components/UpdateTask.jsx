@@ -10,7 +10,7 @@ import './Style/update.css'
 const UpdateTask = () => {
     const { email } = useParams();
     const [tasks, setTasks] = useState([]);
-    const [loading, setLoading] = useState(true);
+    //const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetchTasks();
@@ -20,10 +20,10 @@ const UpdateTask = () => {
         try {
             const response = await axios.get(`https://task-management-app-backend-e5c6.onrender.com/api/user/getusertask/${email}`);
             setTasks(response.data.data);
-            setLoading(false);
+            //setLoading(false);
         } catch (error) {
             console.error('Error fetching tasks:', error);
-            setLoading(false);
+            //setLoading(false);
         }
     };
 
@@ -48,9 +48,7 @@ const UpdateTask = () => {
     return (
         <div className="update-container">
             <h2>Update Tasks</h2>
-            {loading ? (
-                <p>Loading tasks...</p>
-            ) : (
+           
                 <ul className="list-group">
                     {tasks.map(task => (
                         <li key={task._id} className="list-group-item">
@@ -62,7 +60,7 @@ const UpdateTask = () => {
                         </li>
                     ))}
                 </ul>
-            )}
+        
             <ToastContainer />
         </div>
     );

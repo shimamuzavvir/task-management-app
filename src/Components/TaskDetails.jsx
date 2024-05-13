@@ -7,7 +7,7 @@ import './Style/taskdetail.css'
 const TaskDetails = () => {
     const { email } = useParams();
     const [tasks, setTasks] = useState([]);
-    const [loading, setLoading] = useState(true);
+    //const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
@@ -15,10 +15,10 @@ const TaskDetails = () => {
             try {
                 const response = await axios.get(`https://task-management-app-backend-e5c6.onrender.com/api/user/getusertask/${email}`);
                 setTasks(response.data.data);
-                setLoading(false);
+                //setLoading(false);
             } catch (error) {
                 console.error('Error fetching tasks:', error);
-                setLoading(false);
+               // setLoading(false);
             }
         };
 
@@ -29,7 +29,7 @@ const TaskDetails = () => {
         try {
             const response = await axios.get(`https://task-management-app-backend-e5c6.onrender.com/api/user/search/${email}?keyword=${searchTerm}`);
             setTasks(response.data.data);
-            console.log(response.data);
+            //console.log(response.data);
         } catch (error) {
             console.error('Error searching tasks:', error);
         }
@@ -49,9 +49,7 @@ const TaskDetails = () => {
                 />
                 <button className="btn btn-primary" onClick={handleSearch}>Search</button>
             </div>
-            {loading ? (
-                <p>Loading tasks...</p>
-            ) : (
+           
                 <ul className="list-group">
                     {tasks.length === 0 ? (
                         <p>No tasks found.</p>
@@ -66,7 +64,7 @@ const TaskDetails = () => {
                         ))
                     )}
                 </ul>
-            )}
+            
         </div>
         
     );

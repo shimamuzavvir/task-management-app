@@ -4,17 +4,17 @@ import './Style/delete.css'
 
 const DeleteTask = ({ email }) => {
     const [tasks, setTasks] = useState([]);
-    const [loading, setLoading] = useState(true);
+   // const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchTasks = async () => {
             try {
                 const response = await axios.get(`https://task-management-app-backend-e5c6.onrender.com/api/user/getusertask/${email}`);
                 setTasks(response.data.data);
-                setLoading(false);
+                //setLoading(false);
             } catch (error) {
                 console.error('Error fetching tasks:', error);
-                setLoading(false);
+               // setLoading(false);
             }
         };
 
@@ -32,9 +32,7 @@ const DeleteTask = ({ email }) => {
 
     return (
         <div>
-            {loading ? (
-                <p>Loading tasks...</p>
-            ) : (
+           
                 <div className="delete-container">
             <h2>User Tasks</h2>
 
@@ -63,7 +61,7 @@ const DeleteTask = ({ email }) => {
                     </tbody>
                 </table>
                 </div>
-            )}
+            
         </div>
     );
 };
