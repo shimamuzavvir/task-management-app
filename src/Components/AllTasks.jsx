@@ -10,7 +10,7 @@ const AllTasks = ({ token }) => {
     const [tasks, setTasks] = useState([]);
     const { email } = useParams(); // Extract email from URL
 
-   // const [loading, setLoading] = useState(true);
+   
     const [error, setError] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -23,13 +23,12 @@ const AllTasks = ({ token }) => {
                     }
                 });
                 setUsersWithTasks(response.data.data);
-               // setLoading(false);
-              //  toast.success('You are authorized to view all tasks.');
+             
             } catch (error) {
                 console.error('Error fetching all tasks:', error);
-               // setLoading(false);
+              
                 setError('Unauthorized! You are not authorized to view all tasks.');
-              //  toast.error('Unauthorized! You are not authorized to view all tasks.');
+              
             }
         };
 

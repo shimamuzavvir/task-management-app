@@ -26,7 +26,7 @@ const App = () => {
   // Save state to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('token', token);
-    localStorage.setItem('username', username);
+    localStorage.setItem('firstname', username);
     localStorage.setItem('email', email);
   }, [token, username, email]);
 

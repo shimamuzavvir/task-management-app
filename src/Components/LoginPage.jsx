@@ -1,14 +1,17 @@
-// LoginPage.jsx
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-import './Style/Form.css'
+import 'react-toastify/dist/ReactToastify.css';
+
+import './Style/Form.css';
 
 const LoginPage = ({ setUsername, setEmail, setToken }) => {
   const [signUpMode, setSignUpMode] = useState(false);
+  const [loading, setLoading] = useState(false); // Loading state
+  const [error, setError] = useState(null); // Error state
   const navigate = useNavigate();
 
   // Formik setup
@@ -20,6 +23,7 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
   });
 
   const onSubmit = async (values) => {
+    setLoading(true); // Set loading to true while submitting
     try {
       const res = await axios.post('https://task-management-app-backend-e5c6.onrender.com/api/user/login', values);
       setUsername(res.data.data.username);
@@ -28,7 +32,9 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
       toast.success(res.data.message);
       navigate(`/home/${values.email}`);
     } catch (error) {
-      toast.error(error.response.data.message);
+      setError(error.response.data.message || 'An error occurred');
+    } finally {
+      setLoading(false); // Set loading to false regardless of success or failure
     }
   };
 
@@ -83,7 +89,11 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
             </div>
             {/* Login button */}
             <button type="submit" className="btn btn-primary mt-2">
-              Login
+              {loading ? ( // Show loader when loading
+                <Loader type="ThreeDots" color="#FFF" height={20} width={20} />
+              ) : (
+                'Login'
+              )}
             </button>
             {/* Social media icons */}
             <p className="social-text">Or Sign in with social platforms</p>
@@ -118,6 +128,7 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
       </div>
       </div>
       <ToastContainer />
+      {error && <div className="error-message">{error}</div>} {/* Show error message if there is an error */}
     </div>
   );
 };
