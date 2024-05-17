@@ -20,7 +20,16 @@ const App = () => {
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [username, setUsername] = useState(localStorage.getItem('firstname') || '');
   const [email, setEmail] = useState(localStorage.getItem('email') || '');
-  const [responseData, setResponseData] = useState([]);
+  const [loading, setLoading] = useState(true);// New state for loading
+
+  useEffect(() => {
+    // Simulating loading delay
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
 
 
   // Save state to localStorage whenever it changes
@@ -32,6 +41,14 @@ const App = () => {
 
   return (
     <div>
+       {loading ? (
+        // Show loader while loading
+        <div className='loader'>
+          <div class="spinner-border text-primary" style={{ width: "4rem", height: "4rem" }} role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      ) : (
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<RegisterPage />} />
@@ -45,6 +62,7 @@ const App = () => {
 
         </Routes>
       </BrowserRouter>
+       )}
       <ToastContainer />
     </div>
   );

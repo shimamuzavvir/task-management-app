@@ -23,9 +23,9 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
   });
 
   const onSubmit = async (values) => {
-    setLoading(true); // Set loading to true while submitting
     try {
-      const res = await axios.post('https://task-management-app-backend-e5c6.onrender.com/api/user/login', values);
+    setLoading(true); // Set loading to true while submitting
+    const res = await axios.post('https://task-management-app-backend-e5c6.onrender.com/api/user/login', values);
       setUsername(res.data.data.username);
       setEmail(values.email);
       setToken(res.data.token);
