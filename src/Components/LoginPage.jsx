@@ -89,11 +89,7 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
             </div>
             {/* Login button */}
             <button type="submit" className="btn btn-primary mt-2">
-              {loading ? ( // Show loader when loading
-                <Loader type="ThreeDots" color="#FFF" height={20} width={20} />
-              ) : (
-                'Login'
-              )}
+             
             </button>
             {/* Social media icons */}
             <p className="social-text">Or Sign in with social platforms</p>
