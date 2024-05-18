@@ -88,7 +88,7 @@ const LoginPage = ({ setUsername, setEmail, setToken }) => {
               </div>
             </div>
             {/* Login button */}
-            <button type="submit" className="btn btn-primary mt-2">
+            <button type="submit" className="btn btn-primary mt-2">Login
              
             </button>
             {/* Social media icons */}
